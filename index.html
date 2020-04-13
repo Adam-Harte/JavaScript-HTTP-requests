@@ -42,6 +42,20 @@
 			the open method we then need to send the reqeust which we do by using the
 			XMLHttpReqeust objects send method.
 		</p>
+		<h3>Promisifying XMLHttpReqeust</h3>
+		<p>
+			While XMLHttpReqeust is the most widely supproted method of making HTTP
+			requests it is also out of date syntactically and can feel cumbersome to
+			work with. We can improve upon the use of XMLHttpRequest by promisifiying
+			it thus making it easier to work with the asynchronous code it gives us
+			and step through the response data with each '.then' chain. We can
+			promisify XMLHttpReqeust by creating a fucntino that takes a HTTP method
+			and url as arguments and then crreating a promise inside, executing the
+			XMLHttpReqeust inside the promise and then resolving the response data
+			inside the onload. By doing this we can make a request passing the same
+			arguments we did before for XMLHttpReqeust but now have the added benefit
+			of '.then' chaining to work with the response data.
+		</p>
 		<h2>JSON Data</h2>
 		<p>
 			JSON Data is typically what we work with when getting api response data
