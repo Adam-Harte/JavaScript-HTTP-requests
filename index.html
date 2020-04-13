@@ -171,5 +171,22 @@
 			promise with the .json method. So although error handling in fetch is
 			possible it is rather cumbersome.
 		</p>
+		<h3>Form Data</h3>
+		<p>
+			Form Data is another data format we can use to send data to the
+			backend/server in a HTTP request. FormData can be a great option to append
+			extra data that isnt text based such as files from a files input field. We
+			create form data with the 'new' FormData constructor function. The two
+			advantages of this FormData is that firstly it is automatically parsed for
+			you so you dont need to go through the step of JSON stringifying or
+			parsing it. Secondly it allows you to automatically get and parse data
+			from your input forms straight into FormData to be sent to the
+			backend/server. You do this by passing an argument to the FormData
+			constructor of the form you want to transform i.e. a DOM query selection
+			of that form. Form data needs all inputs of the form to have a name
+			attirbute so that it can correctly assign key value pairs for the FormData
+			content. You can see FormData in your request in the network tab on your
+			request and at the bottom of the headers section.
+		</p>
 	</body>
 </html>

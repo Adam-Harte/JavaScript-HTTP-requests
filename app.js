@@ -149,3 +149,36 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 	.then((data) => {
 		console.log(data);
 	});
+
+// FormData
+const fd = new FormData();
+fd.append('title', 'form data');
+fd.append('body', 'form data body content');
+fd.append('userId', Math.random());
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+	method: 'POST',
+	body: fd,
+	headers: {
+		'Content-Type': 'application/json',
+	},
+})
+	.then((response) => {
+		// error handline
+		if (response.status >= 200 && response.status < 300) {
+			console.log(response);
+			return response.json();
+		} else {
+			return response.json().then((errorData) => {
+				console.log(errorData);
+				throw new Error('Something went wrong - Server Side');
+			});
+		}
+	})
+	.catch((error) => {
+		console.log(error);
+		throw new Error('Something went wrong!');
+	})
+	.then((data) => {
+		console.log(data);
+	});
