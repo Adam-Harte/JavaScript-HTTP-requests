@@ -65,6 +65,21 @@
 			backend/server.
 		</p>
 		<h3>DELETE</h3>
+		<h3>Error Handling</h3>
+		<p>
+			There are 2 main things to use and consider when error handling HTTP
+			requests using the XMLHttpReqeust object. Firstly we have the onerror
+			property which we can assign a function to deal with error handling.
+			However this property is only triggered when we get network errors i.e.
+			errors that lead to the request not being sent, any other issues with the
+			response etc. will not trigger this onerror. So to deal with other error
+			cases relating to after a requests being sent such as errors on client or
+			server side or incorrect responses, we have to handle these in onload. We
+			typically handle these in onload by checking for success cases first
+			before parsing and using the response data. This is done by checking if
+			that status code is within the 200s range which indicates a successful
+			request.
+		</p>
 		<p>
 			DELETE requests allow us to delete data from the backend/server. We can
 			make a DELETE request in XMLHttpReqeust by passing 'DELETE' as the first

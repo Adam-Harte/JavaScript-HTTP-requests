@@ -23,7 +23,16 @@ function sendHttpRequest(method, url, data = null) {
 		xhr.responseType = 'json';
 
 		xhr.onload = function () {
-			resolve(xhr.response);
+			if (xhr.status >= 200 && xhr.status < 300) {
+				resolve(xhr.response);
+			} else {
+				reject(new Error('Something went wrong'));
+			}
+		};
+
+		xhr.onerror = function () {
+			console.log(xhr.response);
+			console.log(xhr.status);
 		};
 
 		xhr.send(JSON.stringify(data));
@@ -75,3 +84,24 @@ xhrDelete.onload = function () {
 xhrDelete.send();
 
 sendHttpRequest('DELETE', 'https://jsonplaceholder.typicode.com/posts/1');
+
+// error handling
+const xhr2 = new XMLHttpRequest();
+
+xhr2.open('DELETE', 'https://jsonplaceholder.typicode.com/posts/1');
+
+xhr2.onload = function () {
+	if (xhr2.status >= 200 && xhr2.status < 300) {
+		console.log(xhr2.response);
+		console.log(JSON.parse(xhr2.response));
+	} else {
+		throw new Error('Something went wrong');
+	}
+};
+
+xhr2.onerror = function () {
+	console.log(xhr2.response);
+	console.log(xhr2.status);
+};
+
+xhr2.send();
