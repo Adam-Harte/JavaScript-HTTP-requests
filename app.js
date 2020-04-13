@@ -31,8 +31,7 @@ function sendHttpRequest(method, url, data = null) {
 		};
 
 		xhr.onerror = function () {
-			console.log(xhr.response);
-			console.log(xhr.status);
+			reject(new Error('Request failed to send!'));
 		};
 
 		xhr.send(JSON.stringify(data));
