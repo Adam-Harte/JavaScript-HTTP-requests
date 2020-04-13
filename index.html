@@ -42,6 +42,28 @@
 			the open method we then need to send the reqeust which we do by using the
 			XMLHttpReqeust objects send method.
 		</p>
+		<h3>GET</h3>
+		<p>
+			GET requests allow us to retrieve data from the backend/server. We can
+			make GET requests in XMLHttpReqeust object by passing 'GET' as the first
+			arguent followed by the url of the request as the second argument in the
+			open mehtod. We then need to handle the data in the onload property and we
+			do that by assigning it a fucntion in which we JSON.parse the response
+			property in cases where our response data is JSON format.
+		</p>
+		<h3>POST</h3>
+		<p>
+			POST requests allow us to send data to the backend/server. We can make
+			POST requests in XMLHttpReqeust object by passing 'POST' as the first
+			argument followed by the url for the request as the second argument to the
+			open method. We can handle the response in the onload property however
+			this is typically less useful in POST reqeuests as we are sending data not
+			receiving. Finally we need to be able to give the data to be sent to the
+			backend/server and we do this with the send method where we passs in as an
+			argument the data we want to send. We typically transform this data into
+			JSON by using JSON.stringify to pass in JSON data to send to the
+			backend/server.
+		</p>
 		<h3>Promisifying XMLHttpReqeust</h3>
 		<p>
 			While XMLHttpReqeust is the most widely supproted method of making HTTP

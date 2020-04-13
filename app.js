@@ -14,7 +14,7 @@ xhr.onload = function () {
 xhr.send();
 
 // promisifying XMLHttpReqeust
-function sendHttpRequest(method, url) {
+function sendHttpRequest(method, url, data = null) {
 	const promise = new Promise((resolve, reject) => {
 		const xhr = new XMLHttpRequest();
 
@@ -26,7 +26,7 @@ function sendHttpRequest(method, url) {
 			resolve(xhr.response);
 		};
 
-		xhr.send();
+		xhr.send(JSON.stringify(data));
 	});
 
 	return promise;
@@ -37,3 +37,27 @@ sendHttpRequest('GET', 'https://jsonplaceholder.typicode.com/posts').then(
 		console.log(responseData);
 	}
 );
+
+// POST request
+const xhrPost = new XMLHttpRequest();
+
+xhrPost.open('POST', 'https://jsonplaceholder.typicode.com/posts');
+
+xhrPost.onload = function () {
+	console.log(xhrPost.response);
+	console.log(JSON.parse(xhrPost.response));
+};
+
+xhrPost.send(
+	JSON.stringify({
+		title: 'POST request',
+		body: 'This is a POST request',
+		userId: Math.random(),
+	})
+);
+
+sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', {
+	title: 'POST request',
+	body: 'This is a POST request',
+	userId: Math.random(),
+});
