@@ -158,5 +158,18 @@
 			header data in XMLHttpReqeust using the setRequestHeader method which
 			takes in key values pair as arguments.
 		</p>
+		<h3>Fetch API Error Handling</h3>
+		<p>
+			Error handling with the fetch API presents the same challenges that
+			XMLHttpReqeust does in that a standard error is only thrown with technical
+			errors such as connection issues and a request not actually being sent
+			rather than getting an error or bad status code after the request. To deal
+			with this we have to approach it the same we do for XMLHttpReqeust and
+			check for status codes before using the response data. However the issue
+			here is unlike XMLHttpReqeust we are in a promise chain and can only go
+			into that promise chain further and catch errors by returning another
+			promise with the .json method. So although error handling in fetch is
+			possible it is rather cumbersome.
+		</p>
 	</body>
 </html>

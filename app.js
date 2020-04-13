@@ -131,8 +131,20 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 	},
 })
 	.then((response) => {
-		console.log(response);
-		return response.json();
+		// error handline
+		if (response.status >= 200 && response.status < 300) {
+			console.log(response);
+			return response.json();
+		} else {
+			return response.json().then((errorData) => {
+				console.log(errorData);
+				throw new Error('Something went wrong - Server Side');
+			});
+		}
+	})
+	.catch((error) => {
+		console.log(error);
+		throw new Error('Something went wrong!');
 	})
 	.then((data) => {
 		console.log(data);
