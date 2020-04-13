@@ -51,6 +51,9 @@ const xhrPost = new XMLHttpRequest();
 
 xhrPost.open('POST', 'https://jsonplaceholder.typicode.com/posts');
 
+// request headers
+xhrPost.setRequestHeader('Content-Type', 'application/json');
+
 xhrPost.onload = function () {
 	console.log(xhrPost.response);
 	console.log(JSON.parse(xhrPost.response));
@@ -123,6 +126,9 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 		body: 'This is a POST request',
 		userId: Math.random(),
 	}),
+	headers: {
+		'Content-Type': 'application/json',
+	},
 })
 	.then((response) => {
 		console.log(response);

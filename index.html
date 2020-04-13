@@ -147,5 +147,16 @@
 			send. Key note here when we add data to send in the body it has to be in
 			JSON format so always JSON stringify first.
 		</p>
+		<h2>Request Headers</h2>
+		<p>
+			Request headers are extra pieces of meta data we can add to a request,
+			bare in mind adding request headers are only useful if the backend/server
+			is expecting them and knows what to do with them. The fetch API makes
+			adding request headers easy as we just need to add an object to the
+			configuration objects headers property, then each key value pair is a
+			piece of meta data to add to the request header. We can also add request
+			header data in XMLHttpReqeust using the setRequestHeader method which
+			takes in key values pair as arguments.
+		</p>
 	</body>
 </html>
