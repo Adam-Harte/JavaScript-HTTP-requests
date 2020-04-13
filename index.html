@@ -133,5 +133,19 @@
 			blob or any other of the built in helper parsing methods we are creating a
 			snapshot of that streamed response body.
 		</p>
+		<h3>Fetch API Configuration</h3>
+		<p>
+			By default just passing a url to the fetch API will make it run a GET
+			request however we can configure the fetch API to run any HTTP method we
+			want and also give it data to send and many other built in things a HTTP
+			request configuration may need. We configure the fetch API by passing a
+			second argument to it after the url which is an object that acts as a
+			configuration object for the request. In this object we can set the
+			method, body and many other predefined properties a HTTP request
+			configuration may need. So for a POST request for example we would set the
+			method property to POST and the body property to the JSON data we want to
+			send. Key note here when we add data to send in the body it has to be in
+			JSON format so always JSON stringify first.
+		</p>
 	</body>
 </html>

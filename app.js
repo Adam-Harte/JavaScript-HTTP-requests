@@ -114,3 +114,20 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 	.then((data) => {
 		console.log(data);
 	});
+
+// fetch API configuration
+fetch('https://jsonplaceholder.typicode.com/posts', {
+	method: 'POST',
+	body: JSON.stringify({
+		title: 'POST request',
+		body: 'This is a POST request',
+		userId: Math.random(),
+	}),
+})
+	.then((response) => {
+		console.log(response);
+		return response.json();
+	})
+	.then((data) => {
+		console.log(data);
+	});
