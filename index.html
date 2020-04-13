@@ -119,5 +119,19 @@
 			responseType property to 'json' which will then automatically handle the
 			parsing for us.
 		</p>
+		<h2>Fetch API</h2>
+		<p>
+			The fetch API is a new method for making HTTP requests in a more modern
+			syntatcial format that is supported by modern browsers. The fetch method
+			is promisified by default meaning that it returns a promise. Specifically
+			it returns the requests response object in a promise with particular
+			methods we can use to work with the data. The response object promise we
+			get returned from fetch still needs to be parsed and we do that with the
+			.json method. Fetch gives us this json method on our response object to
+			parse the response body into JavaScript. The response object we get back
+			in the promise is a streamed response meaning when we call json, text,
+			blob or any other of the built in helper parsing methods we are creating a
+			snapshot of that streamed response body.
+		</p>
 	</body>
 </html>

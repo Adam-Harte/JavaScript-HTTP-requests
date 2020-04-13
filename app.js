@@ -104,3 +104,13 @@ xhr2.onerror = function () {
 };
 
 xhr2.send();
+
+// fetch
+fetch('https://jsonplaceholder.typicode.com/posts')
+	.then((response) => {
+		console.log(response);
+		return response.json();
+	})
+	.then((data) => {
+		console.log(data);
+	});
