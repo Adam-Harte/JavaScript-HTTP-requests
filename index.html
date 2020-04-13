@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="app.js"></script>
 		<title>HTTP Requests</title>
 	</head>
 	<body>
@@ -26,6 +27,20 @@
 			the response such as if it was successful or not. Status codes in the 200s
 			are successful response, codes in the 400s mean there was a client error
 			and codes in the 500s means there was a server error.
+		</p>
+		<h2>XMLHttpRequest Object</h2>
+		<p>
+			The XMLHttpRequest object is the oldest and most widely supported method
+			by browsers for making HTTP requests. You create a XMLHttp request object
+			using the 'new' keyword to make an instance of the XMLHttpReqeust object
+			constructor function. Then to send a request using this object we need to
+			congifure the request, the first step is to call the open method. The open
+			method called alone willl not do anything and is instead used as the first
+			part of the configuration process, we pass into the open method the HTTP
+			method we want to use and then the second arugment is the url where we
+			want to send that request. Once the configuration has been set up using
+			the open method we then need to send the reqeust which we do by using the
+			XMLHttpReqeust objects send method.
 		</p>
 	</body>
 </html>
