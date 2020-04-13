@@ -64,6 +64,16 @@
 			JSON by using JSON.stringify to pass in JSON data to send to the
 			backend/server.
 		</p>
+		<h3>DELETE</h3>
+		<p>
+			DELETE requests allow us to delete data from the backend/server. We can
+			make a DELETE request in XMLHttpReqeust by passing 'DELETE' as the first
+			argument and the url for the request as the second argument to the open
+			method. DELETE request urls typically are more speicific than other
+			requests pointing to a specific piece of data via an id for example
+			posts/user/:id. Again we can handle responses if need be with the onload
+			property. Finally we use the send method to complete the request.
+		</p>
 		<h3>Promisifying XMLHttpReqeust</h3>
 		<p>
 			While XMLHttpReqeust is the most widely supproted method of making HTTP

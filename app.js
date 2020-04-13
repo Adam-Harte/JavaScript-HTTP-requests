@@ -61,3 +61,17 @@ sendHttpRequest('POST', 'https://jsonplaceholder.typicode.com/posts', {
 	body: 'This is a POST request',
 	userId: Math.random(),
 });
+
+// DELETE
+const xhrDelete = new XMLHttpRequest();
+
+xhrDelete.open('DELETE', 'https://jsonplaceholder.typicode.com/posts/1');
+
+xhrDelete.onload = function () {
+	console.log(xhrDelete.response);
+	console.log(JSON.parse(xhrDelete.response));
+};
+
+xhrDelete.send();
+
+sendHttpRequest('DELETE', 'https://jsonplaceholder.typicode.com/posts/1');
